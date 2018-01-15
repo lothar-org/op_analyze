@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>权限管理</title>
+<link rel="stylesheet" href="css/authority.css" />
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.SuperSlide.js"></script>
+</head>
+<body>
+<div class="place">
+<span>商品分析</span>
+</div>
+<div class="slideTxtBox">
+<div class="hd">
+<p>权限设置</p>
+<ul>
+<li class="on">管理员</li>
+<li>添加管理员</li>
+<li>权限组</li>
+<li>添加权限组</li>
+</ul>
+</div>
+
+<div class="bd">
+<ul style="display: block;">
+<li>
+<form method="get" action="">
+	<table class="tab1">
+		<thead>
+			<th></th>
+			<th>登录名</th>
+			<th class="align-center">上次登录</th>
+			<th class="align-center">登录次数</th>
+			<th class="align-center">权限组</th>
+			<th class="align-center">操作</th>
+		</thead>
+		<tbody>
+			<tr class="hover">
+				<td class="w24"> <input name="del_id[]" type="checkbox" value="1" disabled="disabled"></td>
+				<td>admin</td>
+				<td class="align-center">2016-09-08 09:05:23</td>
+				<td class="align-center">88</td>
+				<td class="align-center"></td>
+				<td class="w150 align-center">            超级管理员不可编辑            </td>
+			</tr>
+			<tr class="hover" >
+				<td class="w24">   <input type="checkbox" name="del_id[]" value="2" class="checkitem"/>
+				</td>
+				<td>wincomtech</td>
+				<td class="align-center">2016-07-12 17:23:21</td>
+				<td class="align-center">91</td>
+				<td class="align-center">wincomtech</td>
+				<td class="w150 align-center"> <a href="javascript:void(0)" onclick="if(confirm('您确定要删除吗?')){}">删除	</a> | <a href="#">编辑</a>
+				</td>
+			</tr>
+
+			<tfoot>
+				<td><input type="checkbox" class="checkall" id="checkallBottom" name="chkVal"></td>
+				<td colspan="5">
+					<p class="lf">
+						全选 &nbsp;&nbsp;<input type="submit" class="submit" value="删除"/>
+					</p>
+					<ul class="rt">
+						<li class="lf">首页</li>
+						<li class="lf">上一页</li>
+						<li class="lf">下一页</li>
+						<li class="lf">末页</li>
+					</ul>
+				</td>
+			</tfoot>
+		</tbody>
+	</table>
+</form>
+</li>
+</ul>
+
+
+
+<ul style="display: none;">
+	<li>
+		<form id="add_form" method="post">
+			<table class="tab2">
+				<tbody>
+					<tr class="noborder" >
+						<td colspan="2" class="required"><label class="validation" for="admin_name">登录名:</label><label for="admin_name" class="error">登录名不能为空</label></td>
+					</tr>
+					<tr class="noborder" >
+						<td class="vatop rowform" style="width:250px;"><input type="text" id="admin_name" maxlength="20" name="admin_name" class="txt error"></td>
+						<td class="vatop tips">请输入登录名</td>
+					</tr>
+					<tr >
+						<td colspan="2" class="required"><label class="validation" for="admin_password">密码:</label><label for="admin_password" class="error">密码不能为空</label></td>
+					</tr>
+					<tr class="noborder" >
+						<td class="vatop rowform"><input type="password" id="admin_password"  minlength="6" name="admin_password" class="txt error"></td>
+						<td class="vatop tips">请输入密码</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="required"><label class="validation" for="admin_password">确认密码:</label><label for="admin_rpassword" class="error">密码不能为空</label></td>
+					</tr>
+					<tr class="noborder">
+						<td class="vatop rowform"><input type="password" id="admin_rpassword" name="admin_rpassword" class="txt error"></td>
+						<td class="vatop tips">请输入密码</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="required"><label class="validation" for="gadmin_name">权限组:</label></td>
+					</tr>
+					<tr class="noborder">
+						<td class="vatop rowform">
+							<select name="gid" class="valid">
+								<option value="1">guest</option>
+							</select>
+						</td>
+						<td class="vatop tips">请选择一个权限组，如果还未设置，请马上设置</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr class="tfoot">
+						<td colspan="2"><input type="submit" class="submit"  value="提交"/></td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</li>
+</ul>
+
+
+
+<ul style="display: none;">
+	<li>
+		<form method="get" action="">
+			<table class="tab1">
+				<thead>
+					<th></th>
+					<th style="width:80%;text-align:left;">权限组</th>
+					<th class="align-center">操作</th>
+				</thead>
+				<tbody>
+
+					<tr class="hover" >
+						<td class="w24">   <input type="checkbox" name="del_id[]" value="2" class="checkitem"/>
+						</td>
+						<td  style="text-align:left;">wincomtech</td>
+						<td class="w150 align-center"> <a href="javascript:void(0)" onclick="if(confirm('您确定要删除吗?')){}">删除	</a> | <a href="#">编辑</a>
+						</td>
+					</tr>
+					<tfoot>
+						<td><input type="checkbox" class="checkall" id="allBottom" name="chkVal"></td>
+						<td colspan="3">
+							<p class="lf">
+								全选 &nbsp;&nbsp;<input type="submit" class="submit" value="删除"/>
+							</p>
+							<ul class="rt">
+								<li class="lf">首页</li>
+								<li class="lf">上一页</li>
+								<li class="lf">下一页</li>
+								<li class="lf">末页</li>
+							</ul>
+						</td>
+					</tfoot>
+				</tbody>
+			</table>
+		</form>
+	</li>
+</ul>
+
+
+
+<ul style="display: none;">
+<li>
+<form id="add_form1" method="post">
+<input type="hidden" name="form_submit" value="ok">
+<table class="table tb-type2 nobdb">
+<tbody>
+<tr class="noborder" style="background: rgb(255, 255, 255);">
+<td colspan="2" class="required"><label class="validation" for="admin_name">权限组:</label></td>
+</tr>
+<tr class="noborder" style="background: rgb(255, 255, 255);">
+<td class="vatop rowform"><input type="text" id="gname" minlength="1" name="gname" class="txt"></td>
+<td class="vatop tips"></td>
+</tr>
+<tr style="background: rgb(255, 255, 255);">
+<td colspan="2"><table class="table tb-type2 nomargin">
+<thead>
+<tr class="space" style="background: rgb(255, 255, 255);">
+<th> <input id="limitAll" value="1" type="checkbox">&nbsp;&nbsp;设置权限</th>
+</tr>
+</thead>
+<tbody>
+<tr >
+<td>
+<label style="width:100px">&nbsp;</label>
+<input id="limit0" type="checkbox" onclick="selectLimit('limit0')">
+<label for="limit0"><b>设置</b>&nbsp;&nbsp;</label><br />
+<label><input nctype="limit" class="limit0" type="checkbox" name="permission[]" value="setting">站点设置&nbsp;</label>
+<label><input nctype="limit" class="limit0" type="checkbox" name="permission[]" value="upload">上传设置&nbsp;</label>
+<label><input nctype="limit" class="limit0" type="checkbox" name="permission[]" value="payment">支付方式&nbsp;</label>
+<label><input nctype="limit" class="limit0" type="checkbox" name="permission[]" value="message">邮箱短信&nbsp;</label>
+<label><input nctype="limit" class="limit0" type="checkbox" name="permission[]" value="area">地区管理&nbsp;</label>
+<label><input nctype="limit" class="limit0" type="checkbox" name="permission[]" value="offpay_area">配送地区&nbsp;</label>
+<label><input nctype="limit" class="limit0" type="checkbox" name="permission[]" value="cache">清理缓存&nbsp;</label>
+<label><input nctype="limit" class="limit0" type="checkbox" name="permission[]" value="perform">性能优化&nbsp;</label>
+<label><input nctype="limit" class="limit0" type="checkbox" name="permission[]" value="search">搜索设置&nbsp;</label>
+</td>
+</tr>
+<tr >
+<td>
+<label style="width:100px">&nbsp;</label>
+<input id="limit1" type="checkbox" onclick="selectLimit('limit1')">
+<label for="limit1"><b>商品</b>&nbsp;&nbsp;</label><br />
+<label><input nctype="limit" class="limit1" type="checkbox" name="permission[]" value="goods">商品管理&nbsp;</label>
+<label><input nctype="limit" class="limit1" type="checkbox" name="permission[]" value="goods_class">分类管理&nbsp;</label>
+<label><input nctype="limit" class="limit1" type="checkbox" name="permission[]" value="brand">品牌管理&nbsp;</label>
+<label><input nctype="limit" class="limit1" type="checkbox" name="permission[]" value="type">类型管理&nbsp;</label>
+<label><input nctype="limit" class="limit1" type="checkbox" name="permission[]" value="spec">规格管理&nbsp;</label>
+<label><input nctype="limit" class="limit1" type="checkbox" name="permission[]" value="goods_album">图片空间&nbsp;</label>
+</td>
+</tr>
+<tr >
+<td>
+<label style="width:100px">&nbsp;</label>
+<input id="limit2" type="checkbox" onclick="selectLimit('limit2')">
+<label for="limit2"><b>店铺</b>&nbsp;&nbsp;</label><br />
+<label><input nctype="limit" class="limit2" type="checkbox" name="permission[]" value="store">店铺管理&nbsp;</label>
+<label><input nctype="limit" class="limit2" type="checkbox" name="permission[]" value="store_grade">店铺等级&nbsp;</label>
+<label><input nctype="limit" class="limit2" type="checkbox" name="permission[]" value="store_class">店铺分类&nbsp;</label>
+<label><input nctype="limit" class="limit2" type="checkbox" name="permission[]" value="domain">二级域名&nbsp;</label>
+<label><input nctype="limit" class="limit2" type="checkbox" name="permission[]" value="sns_strace">店铺动态&nbsp;</label>
+<label><input nctype="limit" class="limit2" type="checkbox" name="permission[]" value="help_store">店铺帮助&nbsp;</label>
+<label><input nctype="limit" class="limit2" type="checkbox" name="permission[]" value="store_joinin">开店首页&nbsp;</label>
+<label><input nctype="limit" class="limit2" type="checkbox" name="permission[]" value="ownshop">自营店铺&nbsp;</label>
+</td>
+</tr>
+<tr >
+<td>
+<label style="width:100px">&nbsp;</label>
+<input id="limit3" type="checkbox" onclick="selectLimit('limit3')">
+<label for="limit3"><b>会员</b>&nbsp;&nbsp;</label><br />
+<label><input nctype="limit" class="limit3" type="checkbox" name="permission[]" value="member">会员管理&nbsp;</label>
+<label><input nctype="limit" class="limit3" type="checkbox" name="permission[]" value="member_grade">会员级别&nbsp;</label>
+<label><input nctype="limit" class="limit3" type="checkbox" name="permission[]" value="exppoints">经验值管理&nbsp;</label>
+<label><input nctype="limit" class="limit3" type="checkbox" name="permission[]" value="notice">会员通知&nbsp;</label>
+<label><input nctype="limit" class="limit3" type="checkbox" name="permission[]" value="points">积分管理&nbsp;</label>
+<label><input nctype="limit" class="limit3" type="checkbox" name="permission[]" value="sns_sharesetting">分享绑定&nbsp;</label>
+<label><input nctype="limit" class="limit3" type="checkbox" name="permission[]" value="sns_malbum">会员相册&nbsp;</label>
+<label><input nctype="limit" class="limit3" type="checkbox" name="permission[]" value="snstrace">买家动态&nbsp;</label>
+<label><input nctype="limit" class="limit3" type="checkbox" name="permission[]" value="sns_member">会员标签&nbsp;</label>
+<label><input nctype="limit" class="limit3" type="checkbox" name="permission[]" value="predeposit">预存款&nbsp;</label>
+<label><input nctype="limit" class="limit3" type="checkbox" name="permission[]" value="chat_log">聊天记录&nbsp;</label>
+</td>
+</tr>
+<tr >
+<td>
+<label style="width:100px">&nbsp;</label>
+<input id="limit4" type="checkbox" onclick="selectLimit('limit4')">
+<label for="limit4"><b>交易</b>&nbsp;&nbsp;</label><br />
+<label><input nctype="limit" class="limit4" type="checkbox" name="permission[]" value="order">实物订单&nbsp;</label>
+<label><input nctype="limit" class="limit4" type="checkbox" name="permission[]" value="vr_order">虚拟订单&nbsp;</label>
+<label><input nctype="limit" class="limit4" type="checkbox" name="permission[]" value="refund">退款管理&nbsp;</label>
+<label><input nctype="limit" class="limit4" type="checkbox" name="permission[]" value="return">退货管理&nbsp;</label>
+<label><input nctype="limit" class="limit4" type="checkbox" name="permission[]" value="vr_refund">虚拟订单退款&nbsp;</label>
+<label><input nctype="limit" class="limit4" type="checkbox" name="permission[]" value="consulting">咨询管理&nbsp;</label>
+<label><input nctype="limit" class="limit4" type="checkbox" name="permission[]" value="inform">举报管理&nbsp;</label>
+<label><input nctype="limit" class="limit4" type="checkbox" name="permission[]" value="evaluate">评价管理&nbsp;</label>
+<label><input nctype="limit" class="limit4" type="checkbox" name="permission[]" value="complain">投诉管理&nbsp;</label>
+</td>
+</tr>
+<tr >
+<td>
+<label style="width:100px">&nbsp;</label>
+<input id="limit5" type="checkbox" onclick="selectLimit('limit5')">
+<label for="limit5"><b>网站</b>&nbsp;&nbsp;</label><br />
+<label><input nctype="limit" class="limit5" type="checkbox" name="permission[]" value="article_class">文章分类&nbsp;</label>
+<label><input nctype="limit" class="limit5" type="checkbox" name="permission[]" value="article">文章管理&nbsp;</label>
+<label><input nctype="limit" class="limit5" type="checkbox" name="permission[]" value="document">会员协议&nbsp;</label>
+<label><input nctype="limit" class="limit5" type="checkbox" name="permission[]" value="navigation">页面导航&nbsp;</label>
+<label><input nctype="limit" class="limit5" type="checkbox" name="permission[]" value="adv">广告管理&nbsp;</label>
+<label><input nctype="limit" class="limit5" type="checkbox" name="permission[]" value="web_config|web_api">首页管理&nbsp;</label>
+<label><input nctype="limit" class="limit5" type="checkbox" name="permission[]" value="rec_position">推荐位&nbsp;</label>
+<label><input nctype="limit" class="limit5" type="checkbox" name="permission[]" value="web_special">专题管理&nbsp;</label>
+</td>
+</tr>
+<tr >
+<td>
+<label style="width:100px">&nbsp;</label>
+<input id="limit6" type="checkbox" onclick="selectLimit('limit6')">
+<label for="limit6"><b>运营</b>&nbsp;&nbsp;</label><br />
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="operation">基本设置&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="groupbuy">抢购管理&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="vr_groupbuy">虚拟抢购设置&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="activity">活动管理&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="promotion_xianshi">限时折扣&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="promotion_mansong">满即送&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="promotion_bundling">优惠套装&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="promotion_bundling">推荐展位&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="pointprod|pointorder">兑换礼品&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="voucher">代金券&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="bill">结算管理&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="vr_bill">虚拟订单结算&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="mall_consult">平台客服&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="rechargecard">平台充值卡&nbsp;</label>
+<label><input nctype="limit" class="limit6" type="checkbox" name="permission[]" value="delivery">物流自提服务站&nbsp;</label>
+</td>
+</tr>
+<tr >
+<td>
+<label style="width:100px">&nbsp;</label>
+<input id="limit7" type="checkbox" onclick="selectLimit('limit7')">
+<label for="limit7"><b>统计</b>&nbsp;&nbsp;</label><br />
+<label><input nctype="limit" class="limit7" type="checkbox" name="permission[]" value="stat_general">概述及设置&nbsp;</label>
+<label><input nctype="limit" class="limit7" type="checkbox" name="permission[]" value="stat_industry">行业分析&nbsp;</label>
+<label><input nctype="limit" class="limit7" type="checkbox" name="permission[]" value="stat_member">会员统计&nbsp;</label>
+<label><input nctype="limit" class="limit7" type="checkbox" name="permission[]" value="stat_store">店铺统计&nbsp;</label>
+<label><input nctype="limit" class="limit7" type="checkbox" name="permission[]" value="stat_trade">销量分析&nbsp;</label>
+<label><input nctype="limit" class="limit7" type="checkbox" name="permission[]" value="stat_goods">商品分析&nbsp;</label>
+<label><input nctype="limit" class="limit7" type="checkbox" name="permission[]" value="stat_marketing">营销分析&nbsp;</label>
+<label><input nctype="limit" class="limit7" type="checkbox" name="permission[]" value="stat_aftersale">售后分析&nbsp;</label>
+</td>
+</tr>
+<tr >
+<td>
+<label style="width:100px">&nbsp;</label>
+<input id="limit8" type="checkbox" onclick="selectLimit('limit8')">
+<label for="limit8"><b>闲置</b>&nbsp;&nbsp;</label><br />
+<label><input nctype="limit" class="limit8" type="checkbox" name="permission[]" value="flea_index">SEO设置&nbsp;</label>
+<label><input nctype="limit" class="limit8" type="checkbox" name="permission[]" value="flea_class">分类管理&nbsp;</label>
+<label><input nctype="limit" class="limit8" type="checkbox" name="permission[]" value="flea_class_index">首页分类管理&nbsp;</label>
+<label><input nctype="limit" class="limit8" type="checkbox" name="permission[]" value="flea">闲置管理&nbsp;</label>
+<label><input nctype="limit" class="limit8" type="checkbox" name="permission[]" value="flea_cs">地区管理&nbsp;</label>
+</td>
+</tr>
+<tr >
+<td>
+<label style="width:100px">&nbsp;</label>
+<input id="limit9" type="checkbox" onclick="selectLimit('limit9')">
+<label for="limit9"><b>手机端</b>&nbsp;&nbsp;</label><br />
+<label><input nctype="limit" class="limit9" type="checkbox" name="permission[]" value="mb_special">首页设置&nbsp;</label>
+<label><input nctype="limit" class="limit9" type="checkbox" name="permission[]" value="mb_special">专题设置&nbsp;</label>
+<label><input nctype="limit" class="limit9" type="checkbox" name="permission[]" value="mb_category">分类图片设置&nbsp;</label>
+<label><input nctype="limit" class="limit9" type="checkbox" name="permission[]" value="mb_app">下载设置&nbsp;</label>
+<label><input nctype="limit" class="limit9" type="checkbox" name="permission[]" value="mb_feedback">意见反馈&nbsp;</label>
+<label><input nctype="limit" class="limit9" type="checkbox" name="permission[]" value="mb_payment">手机支付&nbsp;</label>
+</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="tfoot">
+<td colspan="2"><input type="submit" class="submit"/></td>
+</tr>
+</tfoot>
+</table>
+</form>
+</li>
+</ul>
+
+
+
+</div>
+</div>
+<script>
+//选项卡
+jQuery(".slideTxtBox").slide( {trigger:"click" });
+
+//选中,全选
+$("#checkallBottom").click(function(){
+	if($('#checkallBottom').prop('checked')){
+		$(".tab1 input").not("input[disabled='disabled']").prop("checked","ckecked");
+	}else{
+		$(".tab1 input").not("input[disabled='disabled']").removeAttr("checked");
+	}
+});
+
+//表单验证
+var a=$("#admin_name").blur(
+	function(){
+		var o=this;
+		fn(o)
+	}
+);
+var b=	$("#admin_password").blur(
+	function(){
+		var o=this;
+		fn(o)
+	}
+);
+var c=	$("#admin_rpassword").blur(
+	function(){
+		var o=this;
+		fn(o)
+	}
+);
+
+function fn(o){
+	if(!$(o).val()){
+		$("label[for="+o.id+"]").css("display","inline-block");
+		return false;
+	};
+	return true;
+}
+
+$("#add_form").submit(
+	function(){
+		if(a&&b&&c){
+			if($("#admin_rpassword").val()==$("#admin_password").val()){
+				return true;
+			}
+			$("label[for=admin_rpassword]").html("两次输入密码不一致");
+			$("label[for=admin_rpassword]").css("display","inline-block");
+			return false;
+		}
+		return false;
+	}
+);
+
+//全选
+$("#limitAll").click(function(){
+	if($('#limitAll').prop('checked')){
+		$("#add_form1 input").prop("checked","ckecked");
+	}
+	else{
+		$("#add_form1 input").removeAttr("checked");
+	}
+});
+
+//函数
+function selectLimit(w){
+	if($("#"+w).prop('checked')){
+		$("input."+w).prop("checked","ckecked");
+	}else{
+		$("input."+w).removeAttr("checked");console.log(w);
+	}	
+}
+
+
+
+
+</script> 
+</body>
+</html>

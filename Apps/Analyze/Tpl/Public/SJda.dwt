@@ -1,0 +1,9 @@
+	<link type="text/css" rel="stylesheet" href="__CSS__/default.css" />
+	<script type="text/javascript" src="__JS__/jquery-1.11.3.min.js"></script>
+	<!-- 选项卡 -->
+	<script type="text/javascript" src="__JS__/jquery.SuperSlide.js"></script>
+	<!-- 日历 -->
+	<script type="text/javascript" src="__PLUG__/laydate/laydate.js"></script>
+	<!-- EChart -->
+	<script type="text/javascript" src="__PLUG__/EChart/echarts.min.js"></script>
+	<script type="text/javascript" src="__PLUG__/EChart/china.js"></script>

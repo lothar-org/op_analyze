@@ -1,0 +1,13 @@
+body{padding:0;margin:0;}
+form{width:800px;margin:10px auto 0;}
+form div{margin-bottom:15px;}
+form input{width:256px;height:20px;font-size:14px;padding:6px 12px;transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;  border: 1px solid #ccc; vertical-align:middle;}
+form input:focus,#select:focus{border-color: #66afe9;outline: 0;-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);}
+
+#select{width:282px;height:34px;padding:6px 12px;;margin-left:32px;border: 1px solid #ccc;transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
+.file{position:relative;}
+.file #opc{padding:0;width:280px;height:32px; opacity:0;position:relative;z-index:999;}
+#show{position:absolute; top:0;left:80px;}
+
+#submit{width: 118px;height: 42px; margin-left: 80px; background-color: #EF353D; border-radius: 5px; color:white;}
+ 

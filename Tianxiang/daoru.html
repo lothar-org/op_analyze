@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>导入</title>
+<link rel="stylesheet" href="css/daoru.css" />
+<script src="js/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+<form action="" name="form" method="post" enctype="multipart/form-data">
+	<div class="upload">
+		英雄：<select name="select" id="select">
+        	<option>--请输入--</option>
+        	<option>火狐</option>
+          	<option>谷歌</option>
+            <option>IE</option>
+            <option>360</option>
+        </select>
+        <span id="tool"></span>
+    </div>
+    <div >
+    	搜索英雄：<input type="text" autocomplete="off" id="search" />
+    </div>
+    <div class="file">
+    	选择文件：<input type="file" onchange="up(this)" id="opc" name="file" /><input type="text" id="show" />
+    </div>
+    <input id="submit" type="submit"/>
+</form>
+<script>
+//上传获得value在另一个input显示
+function up(obj){
+	document.getElementById("show").value=obj.files[0].name;
+}
+
+$("#search").keyup(function(){
+	var s =$("#search").val();
+	var l =$("#select option").length;
+	for (i=0;i<l;i++){
+		var c=$("#select option").get(i).innerHTML;
+		if(s==c){
+			$("#select option").get(i).setAttribute("selected","selected");
+			$("#tool").html(c+"必须是中文或者数字字母，下划线");
+			break;
+		}
+	}
+});
+
+$("#select").change(function(){
+	var con=$("#select option:selected").html();
+	$("#tool").html(con+"必须是中文或者数字字母，下划线");		
+});
+
+$("#select").bind(
+	"click",
+	function(){
+		$("#select option").get(0).setAttribute("disabled","disabled");
+	}
+);
+
+</script>
+</body>
+</html>

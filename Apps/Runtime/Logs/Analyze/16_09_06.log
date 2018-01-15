@@ -1,0 +1,9 @@
+[ 2016-09-06T15:44:11+08:00 ] 127.0.0.1 /index.php/Analyze/Index/main.html
+ERR: 无法加载控制器:Index
+
+[ 2016-09-06T23:14:01+08:00 ] 127.0.0.1 /index.php/Analyze/Index/def.html
+ERR: 非法操作:def
+
+[ 2016-09-06T23:14:54+08:00 ] 127.0.0.1 /index.php/Analyze/Public/footer.html
+ERR: 非法操作:footer
+

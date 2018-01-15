@@ -1,0 +1,10 @@
+	<script type="text/javascript" src="__JS__/old/jsapi.js"></script>
+	<script type="text/javascript" src="__JS__/old/format+zh_CN,default,corechart.I.js"></script>        
+	<script type="text/javascript" src="__JS__/old/jquery.gvChart-1.0.1.min.js"></script>
+
+	<script type="text/javascript" src="__JS__/old/jquery.ba-resize.min.js"></script>
+
+	<link href="__CSS__/select.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="__JS__/old/jquery.idTabs.min.js"></script>
+	<script type="text/javascript" src="__JS__/old/select-ui.min.js"></script>
+	<script type="text/javascript" src="__PLUG__/editor/kindeditor.js"></script>

@@ -1,0 +1,49 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/****/
+*{font-size:10pt;border:0;margin:0;padding:0;}
+body{font-family:'微软雅黑'; margin:0 auto;min-width:980px;}
+ul{display:block;margin:0;padding:0;list-style:none;}
+li{display:block;margin:0;padding:0;list-style: none;}
+img{border:0;}
+dl,dt,dd{margin:0;padding:0;display:block;}
+a,a:focus{text-decoration:none;color:#000;outline:none;blr:expression(this.onFocus=this.blur());}
+a:hover{color:#00a4ac;text-decoration:none;}
+table{border-collapse:collapse;border-spacing: 0;}
+cite{font-style:normal;}
+h2{font-weight:normal;}
+input{outline:none;}
+.lf{float:left;}
+.rt{float:right;}
+.clear{clear:both;}
+
+.place{height:40px; background:url(../images/righttop.gif) repeat-x;}
+.place span{line-height:40px; font-weight:bold;float:left; margin-left:12px;}
+
+.selectdate{overflow:hidden;padding:10px 0;}
+.selectdate_left a.on{color:#00a4ac;}
+.selectdate_right .submit{height:24px;background-color:#00a4ac;border-radius:2px;color:white;padding:0 5px;}
+
+.top-data-box{ background:url(../images/righttop.gif) repeat-x ;}
+.top-data-box .top-data-title{line-height:40px;}
+.clearfix{overflow:hidden;border-left:1px solid #d7e4ea;border-bottom:1px solid #d7e4ea;}
+.clearfix li{text-align:center;border-right:1px solid #d7e4ea;box-sizing:border-box;height:80px;padding-top:25px;}
+.clearfix li p.color{font-size:14pt;color:#00a4ac;}
+
+table{border:1px solid #d7e4ea;margin-top:10px; width:100%;box-sizing:border-box;}
+table td,th{border:1px solid #d7e4ea;width:16.66666%;height:30px; line-height:30px;text-align:center;}
+
+.condition{border:1px solid #ddd;margin-top:10px;padding:10px 20px 0;}
+.condition .shop,.condition .category,.condition .brand{border-bottom:1px solid #ddd;overflow:hidden;line-height:30px; box-sizing:border-box;}
+.condition p{color:#666;}
+.condition li{margin-left:25px;}
+.condition li a.on{color:#00a4ac;}
+.condition select{margin:6px 20px;}
+.condition .model{overflow:hidden;line-height:30px;}
+
+.slideTxtBox{ width:100%; border:1px solid #ddd; margin-top:10px;box-sizing:border-box; }
+.slideTxtBox .hd{ height:50px; line-height:50px; background:#f4f4f4; padding:0 10px 0 20px;   border-bottom:1px solid #ddd;  position:relative; }
+.slideTxtBox .hd ul{ float:left; position:absolute; left:20px; top:-1px; height:50px;   }
+.slideTxtBox .hd ul li{ float:left; padding:0 100px; cursor:pointer;border-right:1px solid #ddd  }
+.slideTxtBox .hd ul li.on{ height:50px;  background:#fff; border:1px solid #ddd; border-left:none; border-bottom:2px solid #fff; }
+.slideTxtBox .bd ul{ padding:15px;  zoom:1;  }

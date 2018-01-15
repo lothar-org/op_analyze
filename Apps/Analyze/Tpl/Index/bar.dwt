@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts - Bar图（雷达）</title>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:600px"></div>
+    <!-- ECharts单文件引入 -->
+    <include file="Public:SJ_danalyze">
+    <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        
+        // var json_data = [
+        //     {"title":"衬衫","value":5,"value1":15},
+        //     {"title":"羊毛衫","value":15,"value1":15},
+        //     {"title":"雪纺衫","value":25,"value1":25},
+        //     {"title":"裤子","value":45,"value1":15},
+        //     {"title":"高跟鞋","value":15,"value1":25},
+        //     {"title":"袜子","value":15,"value1":25}
+        // ];
+
+        var json_data = [
+            {"title":"衬衫","value":5,"value1":15,"value2":15},
+            {"title":"羊毛衫","value":15,"value1":15,"value2":15},
+            {"title":"雪纺衫","value":25,"value1":25,"value2":15},
+            {"title":"裤子","value":45,"value1":15,"value2":15},
+            {"title":"高跟鞋","value":15,"value1":25,"value2":15},
+            {"title":"袜子","value":15,"value1":25,"value2":15}
+        ];
+        
+        var col_title = ""; //标题的列名,固定为第一列
+        var col_data = [] ; // 从第二列开始, 为值字段 , ["value","value1"];
+        var col_data_name =[]; // 从第二列开始, 为值字段 , ["销量","值二"];
+        
+        var chart_title =new Array(); //标题娄组
+        var chart_data = new Array(); //值数组
+        
+        //列标题,列字段名取值
+        var col = 0;
+        for(var key in json_data[0]){
+            if(col==0)
+                col_title = key;
+            else {
+                col_data.push(key);
+                col_data_name.push(key);
+            }
+            col++;
+        }
+        
+        //给值字段赋值
+        for(var i =0;i<col_data.length;i++){
+            chart_data[i] = {
+                    "name": col_data_name[i],
+                    "type":"bar",
+                    "data": [] //[5, 20, 40, 10, 10, 20]
+               };
+        }
+        
+        //填入标题及各值的数据
+        for(var i=0;i<json_data.length;i++){
+            chart_title.push(json_data[i]["title"]);
+            for(var j =0;j<col_data.length;j++){
+                var col_name = col_data[j];
+                chart_data[j].data.push(json_data[i][col_name]);
+                //chart_data[1].data.push(json_data[i]["value1"]);
+            };
+        };
+        
+        
+        
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main')); 
+                
+
+                var option = {
+                    tooltip: {
+                        show: true
+                    },
+                    legend: {
+                        data: col_data_name
+                    },
+                    xAxis : [
+                        {
+                            type : 'category',
+                            data : chart_title //["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value'
+                        }
+                    ],
+                    series : chart_data
+                };
+                
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+            }
+        );
+    </script>
+</body>
